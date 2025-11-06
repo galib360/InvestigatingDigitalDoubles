@@ -158,7 +158,8 @@ body {
 
 .latex-table {
     width: 100%;
-    border-collapse: collapse;
+    /* Use standard collapse for continuous borders */
+    border-collapse: collapse; 
     margin-top: 1em;
     margin-bottom: 1em;
 }
@@ -171,23 +172,7 @@ body {
 .latex-table th, .latex-table td {
     padding: 8px 10px;
     text-align: left;
-    /* Replicating the vertical line separating the first two columns */
-    border-right: 1px solid #ccc;
+    /* --- ADDED BORDER TO ALL CELLS --- */
+    border: 1px solid #000; 
 }
-.latex-table td:last-child, .latex-table th:last-child {
-    border-right: none; /* Remove right border from the last column */
-}
-.latex-table thead th {
-    /* Replicating \toprule[2pt] */
-    border-top: 2px solid #000;
-    border-bottom: 2px solid #000;
-    font-weight: bold;
-}
-.latex-table tbody tr:first-child td {
-    /* Replicating the separation from the header */
-    border-top: none;
-}
-/* Styles for the midrule breaks */
-.latex-table tbody tr.mid-rule td {
-    border-top: 1px solid #ccc;
-}
+
